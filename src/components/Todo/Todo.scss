@@ -1,0 +1,45 @@
+.todo-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        list-style: none;
+        li {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: flex;
+            width: 600px;
+            gap: 20px;
+            justify-content: space-between;
+            &:hover {
+                cursor: pointer;
+            }
+            div {
+                button {
+                    outline: none;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: red;
+                        border: none;
+                        border-radius: 4px;
+                    }
+                }
+                input {
+                    margin-right: 30px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .completed {
+            background-color: aqua;
+        }
+    }
+}
