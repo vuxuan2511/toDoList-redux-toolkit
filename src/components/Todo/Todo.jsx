@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { todosSelector, markCompleted, deleteTodo } from '../../store/todosSlice';
+import { todosSelector, markCompleted, deleteTodo, getTodos } from '../../store/todosSlice';
 
 import TodoForm from '../TodoForm/TodoForm';
 import './Todo.scss';
@@ -13,6 +13,9 @@ const Todo = () => {
     const deleteToDo = (todoId) => {
         dispatch(deleteTodo(todoId));
     };
+    useEffect(() => {
+        dispatch(getTodos());
+    }, [dispatch]);
     return (
         <>
             <TodoForm />
